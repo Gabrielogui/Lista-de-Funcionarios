@@ -1,10 +1,12 @@
+# |=======| CLASSE DE FUNCIONÁRIOS |=======|
 class Funcionario():
+    # ======= CONSTRUTOR =======
     def __init__(self, ID : int, nome : str, idade : int, cargo : str, salario : float):
-        self.id      = ID
-        self.nome    = nome
-        self.idade   = idade
-        self.cargo   = cargo
-        self.salario = salario
+        self.id      = ID      # ID do funcionário
+        self.nome    = nome    # Nome do funcionário
+        self.idade   = idade   # Idade do funcionário
+        self.cargo   = cargo   # Cargo do funcionário
+        self.salario = salario # Salário do funcionário
 
     
 # ==========================

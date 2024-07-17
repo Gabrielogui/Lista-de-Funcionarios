@@ -1,13 +1,15 @@
-from appFunciorio import *
+from appFunciorio import * # Importando arquivo que contem classe do funcionário
 import os # Biblioteca para manipular sistema operacional(SO)
 
+# |=======| APLICAÇÃO |=======|
 class Aplicacao:
+    # ======= CONSTRUTOR DA APLICAÇÃO =======
     def __init__(self):
         # DADOS DA APLICAÇÃO
-        self.dados = []
+        self.dados = [] # Lista que ficará armazenado os funcionáios
         while True:
             os.system('cls')
-            # MENU
+            # ======= MENU =======
             print('''
             =================================
             CADASTRO DE FUNCUIONÁRIOS
@@ -38,10 +40,14 @@ class Aplicacao:
             else:
                 print('Opção inválida...')
                 os.system('pause') # Função para apaertar qualquer botão para continuar
-        
+    
+    # |=======| MÉTODOS |=======|
+
+    # ======= MÉTODO QUE GERA ID =======
     def gerandoID(self):
         return len(self.dados) + 1
 
+    # ======= METODO QUE INCLUI FUNCIONÁRIO =======
     def incluir_func(self):
         print('======= INCLUIR =======')
         IDfun  = self.gerandoID()
@@ -49,11 +55,12 @@ class Aplicacao:
         iddfun = input('Idade do funcionario  : ')
         cafun  = input('Cargo do funcionario  : ')
         safun  = float(input('Salario do funcionario: '))
-        funcionario = Funcionario(IDfun, nmfun, iddfun, cafun, safun)
-        self.dados.append(funcionario)
+        funcionario = Funcionario(IDfun, nmfun, iddfun, cafun, safun) # CRIANDO NOVO OBJETO FUNCIONÁRO
+        self.dados.append(funcionario) # incluindo funcionário adicionado na lista
         print('Incluido com sucesso...')
         os.system('pause') # Função para apaertar qualquer botão para continuar
 
+    # ======= MÉTODO QUE EXCLUI FUNCIONÁRIO =======
     def excluir_func(self):
         print('======= EXCLUIR =======')
         excluiu = False
@@ -69,6 +76,7 @@ class Aplicacao:
             print('Removido com sucesso...')
         os.system('pause') # Função para apaertar qualquer botão para continuar
     
+    # ======= MÉTODO QUE CONSULTA UM FUNCIONÁIO =======
     def ConsUm_func(self):
         print('===== CONSULTAR UM ======')
         encontrou = False
@@ -82,6 +90,7 @@ class Aplicacao:
             print('Fncionário não encontrado')
         os.system('pause') # Função para apaertar qualquer botão para continuar
 
+    # ======= MÉTODO QUE CONSULTA TODOS OS FUNCIONÁRIOS =======
     def ConsTodos_func(self):
         print('===== CONSULTAR TODOS =====')
         encontrou = False
@@ -93,6 +102,7 @@ class Aplicacao:
             print('Nenhum Funcionário cadastrado')
         os.system('pause') # Função para apaertar qualquer botão para continuar
 
+    # ======= MÉTODO QUE ALTERA TODOS OS FUNCIONÁRIOS =======
     def alterar_func(self):
         print('======= ALTERAR =======')
         alterado = False
