@@ -56,29 +56,46 @@ class Aplicacao:
 
     def excluir_func(self):
         print('======= EXCLUIR =======')
+        excluiu = False
         IDfun  = int(input('ID do funcionario: '))
         for f in self.dados:
             if IDfun == f.id:
                 self.dados.remove(f) # FUNÇÃO QUE REMOVE O ELEMENTO DA LISTA
-        print('Removido com sucesso...')
+                excluiu = True
+        
+        if excluiu == False:
+            print('Funcionário não encontrado!')
+        else:
+            print('Removido com sucesso...')
         os.system('pause') # Função para apaertar qualquer botão para continuar
     
     def ConsUm_func(self):
         print('===== CONSULTAR UM ======')
+        encontrou = False
         IDfun  = int(input('ID do funcionario: '))
         for f in self.dados:
             if IDfun == f.id:
                 print(f'ID = {f.id} ; Nome = {f.nome} ; Cargo = {f.cargo} ; Idade = {f.idade} ; salario = {f.salario}')
+                encontrou = True
+        
+        if encontrou == False:
+            print('Fncionário não encontrado')
         os.system('pause') # Função para apaertar qualquer botão para continuar
 
     def ConsTodos_func(self):
         print('===== CONSULTAR TODOS =====')
+        encontrou = False
         for f in self.dados:
             print(f'ID = {f.id} ; Nome = {f.nome} ; Cargo = {f.cargo} ; Idade = {f.idade} ; salario = {f.salario}')
+            encontrou = True
+
+        if encontrou == False:
+            print('Nenhum Funcionário cadastrado')
         os.system('pause') # Função para apaertar qualquer botão para continuar
 
     def alterar_func(self):
         print('======= ALTERAR =======')
+        alterado = False
         IDfun  = int(input('ID do funcionario: '))
         for f in self.dados:
             if IDfun == f.id:
@@ -90,7 +107,12 @@ class Aplicacao:
                 f.idade   = iddfun
                 f.cargo   = cafun
                 f.salario = safun
-        print('Alterado com sucesso...')
+                alterado = True
+        
+        if alterado == False:
+            print('Funcionário não encontrado')
+        else:
+            print('Alterado com sucesso...')
         os.system('pause') # Função para apaertar qualquer botão para continuar
         '''self.ConsTodos_func()'''
 
