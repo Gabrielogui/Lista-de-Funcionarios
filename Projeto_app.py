@@ -39,9 +39,12 @@ class Aplicacao:
                 print('Opção inválida...')
                 os.system('pause') # Função para apaertar qualquer botão para continuar
         
+    def gerandoID(self):
+        return len(self.dados) + 1
+
     def incluir_func(self):
         print('======= INCLUIR =======')
-        IDfun  = int(input('ID do funcionario     : '))
+        IDfun  = self.gerandoID()
         nmfun  = input('Nome do funcionario   : ')
         iddfun = input('Idade do funcionario  : ')
         cafun  = input('Cargo do funcionario  : ')
